@@ -1,0 +1,25 @@
+#pragma once
+#ifndef _ADD_XNOR_GATE_2_H
+#define _ADD_XNOR_GATE_2_H
+
+#include "Action.h"
+// forward
+class ApplicationManager;
+
+class AddXNORgate2 : public Action
+{
+private:
+    int Cx, Cy;       
+    int x1, y1, x2, y2; 
+public:
+    AddXNORgate2(ApplicationManager* pApp);
+    virtual ~AddXNORgate2(void);
+
+    virtual void ReadActionParameters();
+    virtual void Execute();
+    virtual void Undo();
+    virtual void Redo();
+};
+
+#endif
+
