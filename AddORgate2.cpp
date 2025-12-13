@@ -9,7 +9,7 @@ AddORgate2::AddORgate2(ApplicationManager* pApp) : Action(pApp)
 
 AddORgate2::~AddORgate2(void)
 {
-}
+} 
 
 void AddORgate2::ReadActionParameters()
 {
