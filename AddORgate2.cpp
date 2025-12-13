@@ -1,6 +1,6 @@
 #include "AddORgate2.h"
-#include "..\ApplicationManager.h"
-
+#include "ApplicationManager.h"
+#include "OR2.h"
 
 
 AddORgate2::AddORgate2(ApplicationManager* pApp) : Action(pApp)
@@ -9,7 +9,7 @@ AddORgate2::AddORgate2(ApplicationManager* pApp) : Action(pApp)
 
 AddORgate2::~AddORgate2(void)
 {
-} 
+}
 
 void AddORgate2::ReadActionParameters()
 {
@@ -33,7 +33,7 @@ void AddORgate2::Execute()
     GInfo.y1 = Cy - Wdth / 2;
     GInfo.y2 = Cy + Wdth / 2;
 
-    OR2* pA = new OR2(GInfo, OR2_FANOUT);
+    OR2* pA = new OR2(GInfo, 3);
     pManager->AddComponent(pA);
 }
 

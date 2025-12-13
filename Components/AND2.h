@@ -23,6 +23,7 @@ public:
 
 	// Add this to fix the abstract class error
 	virtual Component* Clone() const override;
+	virtual string GetType() const override;
 };
 
 #endif

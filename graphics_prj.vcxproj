@@ -141,7 +141,6 @@
     <ClCompile Include="AddORgate2.cpp" />
     <ClCompile Include="AddSWITCH.cpp" />
     <ClCompile Include="AddXNORgate2.cpp" />
-    <ClCompile Include="AddXNORgate3.cpp" />
     <ClCompile Include="AddXOR3gate.cpp" />
     <ClCompile Include="AddXORgate2.cpp" />
     <ClCompile Include="AND3.cpp" />
@@ -198,7 +197,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="NAND2.cpp" />
+    <ClCompile Include="NOR2.cpp" />
+    <ClCompile Include="NOR3.cpp" />
     <ClCompile Include="NOT.cpp" />
+    <ClCompile Include="OR2.cpp" />
     <ClCompile Include="paste.cpp" />
     <ClCompile Include="select.cpp" />
     <ClCompile Include="SWITCH.cpp" />
@@ -220,7 +222,6 @@
     <ClInclude Include="AddNOTgate2.h" />
     <ClInclude Include="AddSWITCH.h" />
     <ClInclude Include="AddXNORgate2.h" />
-    <ClInclude Include="AddXNORgate3.h" />
     <ClInclude Include="AddXOR3gate.h" />
     <ClInclude Include="AddXORgate2.h" />
     <ClInclude Include="AND3.h" />
@@ -264,7 +265,10 @@
     <ClInclude Include="LED.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="NAND2.h" />
+    <ClInclude Include="NOR2.h" />
+    <ClInclude Include="NOR3.h" />
     <ClInclude Include="NOT.h" />
+    <ClInclude Include="OR2.h" />
     <ClInclude Include="paste.h" />
     <ClInclude Include="select.h" />
     <ClInclude Include="SWITCH.h" />

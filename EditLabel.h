@@ -3,7 +3,8 @@
 #ifndef EDIT_LABEL_ACTION_H
 #define EDIT_LABEL_ACTION_H
 
-#include "Action.h"
+#include "Actions/Action.h"
+
 #include <string>
 
 class EditLabel : public Action

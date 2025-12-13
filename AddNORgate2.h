@@ -2,7 +2,8 @@
 #ifndef _ADD_NOR_GATE_H
 #define _ADD_NOR_GATE_H
 
-#include "Action.h"
+#include "Actions/Action.h"
+
 class ApplicationManager;
 
 class AddNORgate2 : public Action

@@ -1,9 +1,9 @@
 #include "AddXORgate2.h"
 #include "ApplicationManager.h"
-#include "..\GUI\Input.h"
-#include "..\GUI\Output.h"
-#include "..\GUI\UI_Info.h"
-#include "..\Components\XOR2.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "GUI\\UI_Info.h"
+#include "XOR2.h"
 
 AddXORgate2::AddXORgate2(ApplicationManager* pApp) : Action(pApp)
 {

@@ -1,6 +1,6 @@
-#include "XOR3.h"
+#include "NOR3.h"
 
-XOR3::XOR3(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
+NOR3::NOR3(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 {
 	m_GfxInfo.x1 = r_GfxInfo.x1;
 	m_GfxInfo.y1 = r_GfxInfo.y1;
@@ -9,7 +9,7 @@ XOR3::XOR3(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 }
 
 
-void XOR3::Operate()
+void NOR3::Operate()
 {
 	//caclulate the output status as the ANDing of the two input pins
 
@@ -19,37 +19,37 @@ void XOR3::Operate()
 
 // Function Draw
 // Draws 2-input AND gate
-void XOR3::Draw(Output* pOut)
+void NOR3::Draw(Output* pOut)
 {
 	//Call output class and pass gate drawing info to it.
-	pOut->DrawXOR3(m_GfxInfo);
+	pOut->DrawNOR3(m_GfxInfo);
 }
 
 //returns status of outputpin
-int XOR3::GetOutPinStatus()
+int NOR3::GetOutPinStatus()
 {
 	return m_OutputPin.getStatus();
 }
 
 
 //returns status of Inputpin #n
-int XOR3::GetInputPinStatus(int n)
+int NOR3::GetInputPinStatus(int n)
 {
 	return m_InputPins[n - 1].getStatus();	//n starts from 1 but array index starts from 0.
 }
 
 //Set status of an input pin ot HIGH or LOW
-void XOR3::setInputPinStatus(int n, STATUS s)
+void NOR3::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n - 1].setStatus(s);
 }
 
-Component* XOR3::Clone() const
+Component* NOR3::Clone() const
 {
 	return nullptr;
 }
 
-string XOR3::GetType() const
+string NOR3::GetType() const
 {
 	return string();
 }

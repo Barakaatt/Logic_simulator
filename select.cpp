@@ -1,8 +1,8 @@
 #include "Select.h"
-#include "..\ApplicationManager.h"
-#include "..\Components\Component.h"
-#include "..\GUI\Input.h"
-#include "..\GUI\Output.h"
+#include "ApplicationManager.h"
+#include "Components\Component.h"
+#include "GUI\Input.h"
+#include "GUI\Output.h"
 
 Select::Select(ApplicationManager* pApp) : Action(pApp)
 {

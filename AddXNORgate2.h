@@ -2,7 +2,8 @@
 #ifndef _ADD_XNOR_GATE_2_H
 #define _ADD_XNOR_GATE_2_H
 
-#include "Action.h"
+#include "Actions/Action.h"
+
 // forward
 class ApplicationManager;
 

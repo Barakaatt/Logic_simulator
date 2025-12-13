@@ -1,9 +1,9 @@
 #include "AddANDgate3.h"
 #include "ApplicationManager.h"
-#include "..\\GUI\\Input.h"
-#include "..\\GUI\\Output.h"
-#include "..\\GUI\\UI_Info.h"
-#include "..\\Components\\AND3.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "GUI\\UI_Info.h"
+#include "AND3.h"
 
 AddANDgate3::AddANDgate3(ApplicationManager* pApp) : Action(pApp)
 {

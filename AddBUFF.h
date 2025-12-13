@@ -2,7 +2,8 @@
 #ifndef _ADD_BUFF_GATE_H
 #define _ADD_BUFF_GATE_H
 
-#include "Action.h"
+#include "Actions/Action.h"
+
 
 
 

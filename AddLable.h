@@ -1,9 +1,9 @@
 #pragma once
 #pragma once
 
-#include "Action.h"
+#include "Actions/Action.h"
 #include <string>
-#include "../Components/Component.h"
+#include "Components/Component.h"
 
 class AddLabel : public Action
 {

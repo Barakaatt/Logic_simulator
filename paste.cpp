@@ -1,12 +1,10 @@
 #include "Paste.h"
 #include "ApplicationManager.h"
-#include "Component.h"
-#include "Input.h"
-#include "Output.h"
+#include "Components/Component.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
 #include "Defs.h"    // for FANOUT constants and maybe GraphicsInfo definition
 #include <string>
-#include "Components/AND2.h"
-#include "Components/OR2.h"
 
 Paste::Paste(ApplicationManager* pApp) : Action(pApp)
 {
@@ -48,41 +46,7 @@ void Paste::Execute()
     newG.x2 = newG.x1 + w;
     newG.y2 = newG.y1 + h;
 
-    std::string type = copied->GetType();
-    Component* newComp = nullptr;
-
-  
-    if (type == "AND2")
-        newComp = new AND2(newG, AND2_FANOUT);
-    else if (type == "OR2")
-        newComp = new OR2(newG, OR2_FANOUT);
-    else if (type == "NAND2")
-        newComp = new NAND2(newG, NAND2_FANOUT);
-    else if (type == "NOR2")
-        newComp = new NOR2(newG, NOR2_FANOUT);
-    else if (type == "XOR2")
-        newComp = new XOR2(newG, XOR2_FANOUT);
-    else if (type == "XNOR2")
-        newComp = new XNOR2(newG, XNOR2_FANOUT);
-    else if (type == "AND3")
-        newComp = new AND3(newG, AND3_FANOUT);
-    else if (type == "XOR3")
-        newComp = new XOR3(newG, XOR3_FANOUT);
-    else if (type == "NOR3")
-        newComp = new NOR3(newG, NOR3_FANOUT);
-    else if (type == "BUFF")
-        newComp = new BUFF(newG, BUFF_FANOUT);
-    else if (type == "NOT")
-        newComp = new NOT(newG, NOT_FANOUT);
-    else if (type == "SWITCH")
-        newComp = new SWITCH(newG, SWITCH_FANOUT); // maybe fanout unused
-    else if (type == "LED")
-        newComp = new LED(newG, 0);
-    else
-    {
-        pOut->PrintMsg("Paste: Unsupported type for paste!");
-        return;
-    }
+	Component* newComp = copied->Clone();
 
     if (newComp)
     {

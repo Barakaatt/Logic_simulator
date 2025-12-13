@@ -1,8 +1,8 @@
 #include "Move.h"
-#include "../ApplicationManager.h"
-#include "../GUI/Input.h"
-#include "../GUI/Output.h"
-#include "../Components/Component.h"
+#include "ApplicationManager.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "Components/Component.h"
 
 Move::Move(ApplicationManager* pApp) : Action(pApp)
 {

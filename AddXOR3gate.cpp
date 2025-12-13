@@ -1,9 +1,9 @@
 #include "AddXOR3gate.h"
 #include "ApplicationManager.h"
-#include "..\\GUI\\Input.h"
-#include "..\\GUI\\Output.h"
-#include "..\\GUI\\UI_Info.h"
-#include "..\\Components\\XOR3.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "GUI\\UI_Info.h"
+#include "XOR3.h"
 
 AddXORgate3::AddXORgate3(ApplicationManager* pApp) : Action(pApp)
 {

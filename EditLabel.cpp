@@ -1,8 +1,8 @@
 #include "EditLabel.h"
-#include "..\ApplicationManager.h"
-#include "..\Components\Component.h"   
-#include "..\GUI\Input.h"
-#include "..\GUI\Output.h"
+#include "ApplicationManager.h"
+#include "Components\Component.h"   
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
 
 EditLabel::EditLabel(ApplicationManager* pApp) : Action(pApp)
 {

@@ -43,3 +43,13 @@ void AND2::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n-1].setStatus(s);
 }
+
+Component* AND2::Clone() const
+{
+	return nullptr;
+}
+
+string AND2::GetType() const
+{
+	return string();
+}

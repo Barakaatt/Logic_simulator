@@ -173,9 +173,6 @@
     <ClCompile Include="AddXOR3gate.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="AddXNORgate3.cpp">
-      <Filter>Actions</Filter>
-    </ClCompile>
     <ClCompile Include="AddNORgate3.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
@@ -229,6 +226,15 @@
     </ClCompile>
     <ClCompile Include="EditLabel.cpp">
       <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="NOR2.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NOR3.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="OR2.cpp">
+      <Filter>Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -365,9 +371,6 @@
     <ClInclude Include="AddXOR3gate.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="AddXNORgate3.h">
-      <Filter>Actions</Filter>
-    </ClInclude>
     <ClInclude Include="AddNORgate3.h">
       <Filter>Actions</Filter>
     </ClInclude>
@@ -421,6 +424,15 @@
     </ClInclude>
     <ClInclude Include="EditLabel.h">
       <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="NOR2.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NOR3.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="OR2.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

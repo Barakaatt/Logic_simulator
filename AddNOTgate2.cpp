@@ -1,9 +1,9 @@
 #include "AddNOTgate2.h"
-#include "..\\ApplicationManager.h"
-#include "..\\GUI\\Input.h"
-#include "..\\GUI\\Output.h"
-#include "..\\GUI\\UI_Info.h"
-
+#include "ApplicationManager.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "GUI\\UI_Info.h"
+#include "NOT.h"
 AddNOTgate2::AddNOTgate2(ApplicationManager* pApp) : Action(pApp)
 {
 }
@@ -46,7 +46,7 @@ void AddNOTgate2::Execute()
     GInfo.y2 = y2;
 
     
-    NOT* pA = new NOT(GInfo, NOT_FANOUT);
+    NOT* pA = new NOT(GInfo, 3);
 
    
     pManager->AddComponent(pA);

@@ -1,8 +1,8 @@
-#include "Copy.h"
+#include "copy.h"
 #include "ApplicationManager.h"
-#include "Component.h"
-#include "Input.h"
-#include "Output.h"
+#include "Components/Component.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
 #include "Defs.h"
 
 Copy::Copy(ApplicationManager* pApp) : Action(pApp)

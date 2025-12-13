@@ -1,9 +1,9 @@
 #include "AddBUFF.h"
 #include"ApplicationManager.h"
-#include "..\\GUI\\Input.h"
-#include "..\\GUI\\Output.h"
-#include "..\\GUI\\UI_Info.h"
-#include "..\\Components\\BUFF.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "GUI\\UI_Info.h"
+#include "BUFF.h"
 
 AddBUFF::AddBUFF(ApplicationManager* pApp) : Action(pApp)
 {

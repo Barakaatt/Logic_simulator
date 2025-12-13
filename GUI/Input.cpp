@@ -1,5 +1,4 @@
-#include "..\Defs.h"
-#include "Input.h"
+//#include "Input.h"
 #include "Output.h"
 
 Input::Input(window* pW)

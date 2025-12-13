@@ -1,9 +1,9 @@
 #include "AddXNORgate2.h"
 #include "ApplicationManager.h"
-#include "..\\GUI\\Input.h"
-#include "..\\GUI\\Output.h"
-#include "..\\GUI\\UI_Info.h"
-#include "..\\Components\\XNOR2.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "GUI\\UI_Info.h"
+#include "XNOR2.h"
 
 AddXNORgate2::AddXNORgate2(ApplicationManager* pApp) : Action(pApp)
 {

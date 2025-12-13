@@ -2,7 +2,8 @@
 #ifndef _ADD_XOR_GATE_3_H
 #define _ADD_XOR_GATE_3_H
 
-#include "Action.h"
+#include "Actions/Action.h"
+
 
 class ApplicationManager;
 

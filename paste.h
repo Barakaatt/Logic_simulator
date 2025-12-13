@@ -2,7 +2,7 @@
 #ifndef PASTE_ACTION_H
 #define PASTE_ACTION_H
 
-#include "Action.h"
+#include "Actions/Action.h"
 
 class Paste : public Action
 {

@@ -46,3 +46,13 @@ void Connection::setInputPinStatus(int n, STATUS s)
 {
 	SrcPin->setStatus(s);
 }
+
+Component* Connection::Clone() const
+{
+	return nullptr;
+}
+
+string Connection::GetType() const
+{
+	return string();
+}

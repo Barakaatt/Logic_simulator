@@ -2,7 +2,7 @@
 #define _ACTION_H
 
 class ApplicationManager; //forward class declaration
-
+class Component;
 
 //Base class for all possible actions (abstract class)
 class Action

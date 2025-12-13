@@ -1,9 +1,9 @@
 #include "AddNANDgate2.h"
 #include "ApplicationManager.h"
-#include "..\GUI\Input.h"
-#include "..\GUI\Output.h"
-#include "..\GUI\UI_Info.h"
-#include "..\Components\NAND2.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "GUI\\UI_Info.h"
+#include "NAND2.h"
 
 AddNANDgate2::AddNANDgate2(ApplicationManager* pApp) : Action(pApp)
 {

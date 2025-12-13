@@ -75,12 +75,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case ADD_Buff:
 			pAct = new AddBUFF(this);
 			break;
-		case ADD_Switch:
-			pAct = new AddSwitch(this);
-			break;
-		case ADD_LED:
-			pAct = new AddLED(this);
-			break;
+		//case ADD_Switch:
+		//	pAct = new AddSwitch(this);
+		//	break;
+		//case ADD_LED:
+		//	pAct = new AddLED(this);
+		//	break;
 		case ADD_AND_GATE_3:
 			pAct = new AddANDgate3(this);
 			break;
@@ -90,23 +90,19 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case ADD_NOR_GATE_3:
 			pAct = new AddNORgate3(this);
 			break;
-
-		case ADD_CONNECTION:
-			pAct = new AddConnection(this);
-			break;
-	
-
+		//case ADD_CONNECTION:
+		//	pAct = new AddConnection(this);
+		//	break;
 		case EXIT:
 			pAct = new ExitAction(this);
 			break;
-		case ADD_MOVE:   
+		case MOVE:   
 			pAct = new Move(this);
 			break;
-		case ADD_COPY:
+		case COPY:
 			pAct = new Copy(this);
 			break;
-
-		case ADD_PASTE:
+		case PASTE:
 			pAct = new Paste(this);
 			break;
 		case EDIT_Label:

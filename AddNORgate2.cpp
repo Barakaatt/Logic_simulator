@@ -1,9 +1,9 @@
 #include "AddNORgate2.h"
 #include "ApplicationManager.h"
-#include "..\GUI\Input.h"
-#include "..\GUI\Output.h"
-#include "..\GUI\UI_Info.h"
-
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "GUI\\UI_Info.h"
+#include "NOR2.h"
 
 AddNORgate2::AddNORgate2(ApplicationManager* pApp) : Action(pApp)
 {

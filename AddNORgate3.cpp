@@ -1,9 +1,9 @@
 #include "AddNORgate3.h"
 #include "ApplicationManager.h"
-#include "..\\GUI\\Input.h"
-#include "..\\GUI\\Output.h"
-#include "..\\GUI\\UI_Info.h"
-#include "..\\Components\\NOR3.h"
+#include "GUI\\Input.h"
+#include "GUI\\Output.h"
+#include "GUI\\UI_Info.h"
+#include "NOR3.h"
 
 AddNORgate3::AddNORgate3(ApplicationManager* pApp) : Action(pApp)
 {

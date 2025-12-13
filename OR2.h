@@ -1,19 +1,29 @@
 #ifndef _OR2_H
 #define _OR2_H
 
-#include "Gate.h"
-#include "..\\Defs.H"
-#include "..\\GUI\\UI_Info.h"
+/*
+  Class NAND2
+  -----------
+  represent the 2-input NAND gate
+*/
 
-class OR2 : public Gate
+#include "Components/Gate.h"
+
+class OR2 :public Gate
 {
 public:
-    OR2(const GraphicsInfo& r_GfxInfo, int r_FanOut);
-    virtual void Operate();
-    virtual void Draw(Output* pOut);
-    virtual int GetOutPinStatus();
-    virtual int GetInputPinStatus(int n);
-    virtual void setInputPinStatus(int n, STATUS s);
+	OR2(const GraphicsInfo& r_GfxInfo, int r_FanOut);
+	virtual void Operate();	//Calculates the output of the AND gate
+	virtual void Draw(Output* pOut);	//Draws 2-input gate
+
+	virtual int GetOutPinStatus();	//returns status of outputpin if LED, return -1
+	virtual int GetInputPinStatus(int n);	//returns status of Inputpin # n if SWITCH, return -1
+
+	virtual void setInputPinStatus(int n, STATUS s);	//set status of Inputpin # n, to be used by connection class.
+
+	// Add this to fix the abstract class error
+	virtual Component* Clone() const override;
+	virtual string GetType() const override;
 };
 
-#endif
+#endif#pragma once

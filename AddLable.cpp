@@ -1,8 +1,8 @@
 #include "AddLable.h"
 #include "ApplicationManager.h"
-#include "Input.h"
-#include "Output.h"
-#include "Component.h"
+#include "GUI/Input.h"
+#include "GUI/Output.h"
+#include "Components/Component.h"
 
 AddLabel::AddLabel(ApplicationManager* pApp) : Action(pApp), m_x(0), m_y(0), m_pComp(nullptr) {}
 
