@@ -1,3 +1,4 @@
+#include "Defs.H" // Add this include at the top of the file to get access to NAND2_FANOUT
 #include "NAND2.h"
 
 NAND2::NAND2(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
@@ -11,9 +12,14 @@ NAND2::NAND2(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 
 void NAND2::Operate()
 {
-	//caclulate the output status as the ANDing of the two input pins
+	// Calculate the output status as the NAND of the two input pins
+	STATUS in1 = m_InputPins[0].getStatus();
+	STATUS in2 = m_InputPins[1].getStatus();
 
-	//Add you code here
+	if (in1 == HIGH && in2 == HIGH)
+		m_OutputPin.setStatus(LOW);
+	else
+		m_OutputPin.setStatus(HIGH);
 }
 
 
@@ -46,10 +52,17 @@ void NAND2::setInputPinStatus(int n, STATUS s)
 
 Component* NAND2::Clone() const
 {
-	return nullptr;
+	return new NAND2(m_GfxInfo, NAND2_FANOUT);
 }
 
 string NAND2::GetType() const
 {
-	return string();
+	return "NAND2";
+}
+
+bool NAND2::IsInside(int x, int y) const
+{
+	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
+		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
+
 }

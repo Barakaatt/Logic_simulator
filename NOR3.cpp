@@ -11,9 +11,17 @@ NOR3::NOR3(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 
 void NOR3::Operate()
 {
-	//caclulate the output status as the ANDing of the two input pins
-
-	//Add you code here
+	// Calculate the output status as the NOR of the three input pins
+	bool anyHigh = false;
+	for (int i = 0; i < 3; ++i)
+	{
+		if (m_InputPins[i].getStatus() == HIGH)
+		{
+			anyHigh = true;
+			break;
+		}
+	}
+	m_OutputPin.setStatus(anyHigh ? LOW : HIGH);
 }
 
 
@@ -46,10 +54,10 @@ void NOR3::setInputPinStatus(int n, STATUS s)
 
 Component* NOR3::Clone() const
 {
-	return nullptr;
+    return new NOR3(m_GfxInfo, NOR3_FANOUT);
 }
 
 string NOR3::GetType() const
 {
-	return string();
+	return "NOR3";
 }

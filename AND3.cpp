@@ -46,10 +46,15 @@ void AND3::setInputPinStatus(int n, STATUS s)
 
 Component* AND3::Clone() const
 {
-	return nullptr;
+    return new AND3(m_GfxInfo, AND3_FANOUT);
 }
 
 string AND3::GetType() const
 {
-	return string();
+	return "AND3";
+}
+bool AND3::IsInside(int x, int y) const
+{
+	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
+		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
 }

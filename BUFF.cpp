@@ -46,10 +46,10 @@ void BUFF::setInputPinStatus(int n, STATUS s)
 
 Component* BUFF::Clone() const
 {
-	return nullptr;
+    return new BUFF(m_GfxInfo, BUFF_FANOUT);
 }
 
 string BUFF::GetType() const
 {
-	return string();
+	return "BUFF";
 }

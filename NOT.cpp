@@ -11,9 +11,11 @@ NOT::NOT(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 
 void NOT::Operate()
 {
-	//caclulate the output status as the ANDing of the two input pins
-
-	//Add you code here
+    // NOT gate: output is the inverse of the first input pin
+    if (m_InputPins[0].getStatus() == HIGH)
+        m_OutputPin.setStatus(LOW);
+    else
+        m_OutputPin.setStatus(HIGH);
 }
 
 
@@ -46,10 +48,17 @@ void NOT::setInputPinStatus(int n, STATUS s)
 
 Component* NOT::Clone() const
 {
-	return nullptr;
+    return new NOT(m_GfxInfo, 1);
 }
 
 string NOT::GetType() const
 {
-	return string();
+	return "NOT";
+}
+
+bool NOT::IsInside(int x, int y) const
+{
+	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
+		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
+	
 }

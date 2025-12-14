@@ -41,6 +41,7 @@ public:
 	}
 
 	virtual void setInputPinStatus(int n, STATUS s)=0;	//set status of Inputpin # n, to be used by connection class.
+	virtual bool IsInside(int x, int y) const = 0;
 
 	
 	Component();	

@@ -46,10 +46,17 @@ void XOR2::setInputPinStatus(int n, STATUS s)
 
 Component* XOR2::Clone() const
 {
-	return nullptr;
+    return new XOR2(m_GfxInfo, XOR2_FANOUT);
 }
 
 string XOR2::GetType() const
 {
-	return string();
+	return "XOR2";
+}
+
+bool XOR2::IsInside(int x, int y) const
+{
+	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
+		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
+	
 }

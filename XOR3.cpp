@@ -11,10 +11,18 @@ XOR3::XOR3(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 
 void XOR3::Operate()
 {
-	//caclulate the output status as the ANDing of the two input pins
-
-	//Add you code here
+	// Calculate the output status as the XOR of the three input pins
+	bool highCount = 0;
+	for (int i = 0; i < 3; ++i)
+	{
+		if (m_InputPins[i].getStatus() == HIGH)
+		{
+			highCount = !highCount; // Toggle highCount for each HIGH input
+		}
+	}
+	m_OutputPin.setStatus(highCount ? HIGH : LOW);
 }
+	
 
 
 // Function Draw
@@ -46,10 +54,17 @@ void XOR3::setInputPinStatus(int n, STATUS s)
 
 Component* XOR3::Clone() const
 {
-	return nullptr;
+    return new XOR3(m_GfxInfo, XOR3_FANOUT);
 }
 
 string XOR3::GetType() const
 {
-	return string();
+	return "XOR3";
+}
+
+bool XOR3::IsInside(int x, int y) const
+{
+	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
+		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
+	
 }

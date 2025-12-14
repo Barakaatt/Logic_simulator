@@ -24,6 +24,9 @@ public:
 	// Add this to fix the abstract class error
 	virtual Component* Clone() const override;
 	virtual string GetType() const override;
+
+	// Add missing override for IsInside to fix abstract class error
+	virtual bool IsInside(int x, int y) const override;
 };
 
 #endif

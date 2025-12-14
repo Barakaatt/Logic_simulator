@@ -21,15 +21,25 @@ void Copy::ReadActionParameters()
     Input* pIn = pManager->GetInput();
 
     pOut->PrintMsg("Copy: Click on a component to copy it.");
+
     Point clickedPos;
-    pIn->GetPointClicked(clickedPos.x, clickedPos.y); 
+
+    while (true)
+    {
+        pIn->GetPointClicked(clickedPos.x, clickedPos.y);
+        if (clickedPos.y > UI.ToolBarHeight)
+            break;
+    }
+
     pOut->ClearStatusBar();
 
     m_copied = pManager->GetComponentAt(clickedPos.x, clickedPos.y);
 }
 
+
 void Copy::Execute()
 {
+    ReadActionParameters();
     Output* pOut = pManager->GetOutput();
 
     if (m_copied == nullptr)

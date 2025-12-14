@@ -11,9 +11,12 @@ OR2::OR2(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 
 void OR2::Operate()
 {
-	//caclulate the output status as the ANDing of the two input pins
-
-	//Add you code here
+	// Calculate the output status as the ORing of the two input pins
+	// If any input is HIGH, output is HIGH; otherwise, output is LOW
+	if (m_InputPins[0].getStatus() == HIGH || m_InputPins[1].getStatus() == HIGH)
+		m_OutputPin.setStatus(HIGH);
+	else
+		m_OutputPin.setStatus(LOW);
 }
 
 
@@ -46,10 +49,21 @@ void OR2::setInputPinStatus(int n, STATUS s)
 
 Component* OR2::Clone() const
 {
-	return nullptr;
+    // Use the current object's m_GfxInfo and a defined fanout value
+    // OR2_FANOUT is not defined in the provided code, but AND2_FANOUT is defined in Defs.H
+    // Use AND2_FANOUT as the default fanout for 2-input gates
+    return new OR2(*this);
 }
 
 string OR2::GetType() const
 {
-	return string();
+	return  "OR2"; 
+}
+
+bool OR2::IsInside(int x, int y) const
+{
+	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
+		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
+
+	
 }

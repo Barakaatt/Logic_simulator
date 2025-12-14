@@ -11,9 +11,12 @@ NOR2::NOR2(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 
 void NOR2::Operate()
 {
-	//caclulate the output status as the ANDing of the two input pins
-
-	//Add you code here
+	//caclulate the output status as the NORing of the two input pins
+	if (m_InputPins[0].getStatus() == LOW && m_InputPins[1].getStatus() == LOW)
+		m_OutputPin.setStatus(HIGH);
+	else
+		m_OutputPin.setStatus(LOW);
+	
 }
 
 
@@ -46,10 +49,10 @@ void NOR2::setInputPinStatus(int n, STATUS s)
 
 Component* NOR2::Clone() const
 {
-	return nullptr;
+    return new NOR2(m_GfxInfo, NOR2_FANOUT);
 }
 
 string NOR2::GetType() const
 {
-	return string();
+	return "NOR2";
 }

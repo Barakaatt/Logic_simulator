@@ -53,3 +53,8 @@ string AND2::GetType() const
 {
 	return string();
 }
+bool AND2::IsInside(int x, int y) const
+{
+	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
+		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
+}

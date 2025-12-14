@@ -11,9 +11,15 @@ XNOR2::XNOR2(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 
 void XNOR2::Operate()
 {
-	//caclulate the output status as the ANDing of the two input pins
+	// Calculate the output status as the XNOR of the two input pins
+	STATUS in1 = m_InputPins[0].getStatus();
+	STATUS in2 = m_InputPins[1].getStatus();
 
-	//Add you code here
+	// XNOR: output is HIGH if both inputs are the same, LOW otherwise
+	if (in1 == in2)
+		m_OutputPin.setStatus(HIGH);
+	else
+		m_OutputPin.setStatus(LOW);
 }
 
 
@@ -46,10 +52,17 @@ void XNOR2::setInputPinStatus(int n, STATUS s)
 
 Component* XNOR2::Clone() const
 {
-	return nullptr;
+    return new XNOR2(m_GfxInfo, XNOR2_FANOUT);
 }
 
 string XNOR2::GetType() const
 {
-	return string();
+	return "XNOR2";
+}
+
+bool XNOR2::IsInside(int x, int y) const
+{
+	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
+		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
+	
 }

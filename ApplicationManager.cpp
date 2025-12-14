@@ -136,19 +136,16 @@ void ApplicationManager::UpdateInterface()
 
 
 
-	Component* ApplicationManager::GetComponentAt(int x, int y)
+Component* ApplicationManager::GetComponentAt(int x, int y)
+{
+	for (int i = CompCount - 1; i >= 0; i--)
 	{
-		for (int i = 0; i < CompCount; i++)
-		{
-			GraphicsInfo g = CompList[i]->GetGraphicsInfo();
-			if (x >= g.x1 && x <= g.x2 &&
-				y >= g.y1 && y <= g.y2)
-			{
-				return CompList[i];
-			}
-		}
-		return NULL; 
+		if (CompList[i]->IsInside(x, y))
+			return CompList[i];
 	}
+	return nullptr;
+}
+
 	void ApplicationManager::SetClipboard(Component* pComp)
 	{
 		if (Clipboard)
