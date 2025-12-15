@@ -9,7 +9,7 @@
 
 #include "Components/Gate.h"
 
-class BUFF :public Gate
+class BUFF : public Gate
 {
 public:
 	BUFF(const GraphicsInfo& r_GfxInfo, int r_FanOut);
@@ -25,14 +25,6 @@ public:
 	virtual Component* Clone() const override;
 	virtual string GetType() const override;
 	virtual bool IsInside(int x, int y) const override;
-
-	// Implementation of IsInside for BUFF
-	bool BUFF::IsInside(int x, int y) const
-	{
-	    // Simple rectangle check using m_GfxInfo
-	    return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
-	            y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
-	}
 };
 
 #endif

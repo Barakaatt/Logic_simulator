@@ -4,6 +4,9 @@
 #include "..\Defs.h"
 #include "..\GUI\Output.h"
 #include "Pin.h"
+#include "OutputPin.h" 
+
+class InputPin; // forward declaration
 
 //Base class for classes Gate, Switch, and LED.
 class Component
