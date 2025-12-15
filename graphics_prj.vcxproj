@@ -270,6 +270,7 @@
     <ClInclude Include="NOT.h" />
     <ClInclude Include="OR2.h" />
     <ClInclude Include="paste.h" />
+    <ClInclude Include="SaveAction.h" />
     <ClInclude Include="select.h" />
     <ClInclude Include="SWITCH.h" />
     <ClInclude Include="XNOR2.h" />
