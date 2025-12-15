@@ -194,6 +194,7 @@
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
     <ClCompile Include="LED.cpp" />
+    <ClCompile Include="LoadAction.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="NAND2.cpp" />
@@ -202,6 +203,7 @@
     <ClCompile Include="NOT.cpp" />
     <ClCompile Include="OR2.cpp" />
     <ClCompile Include="paste.cpp" />
+    <ClCompile Include="SaveAction.cpp" />
     <ClCompile Include="select.cpp" />
     <ClCompile Include="SWITCH.cpp" />
     <ClCompile Include="XNOR2.cpp" />
@@ -263,6 +265,7 @@
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="AddORgate2.h" />
     <ClInclude Include="LED.h" />
+    <ClInclude Include="LoadAction.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="NAND2.h" />
     <ClInclude Include="NOR2.h" />

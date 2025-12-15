@@ -19,6 +19,9 @@
 #include "paste.h"
 #include "EditLabel.h"
 #include "select.h"
+#include "SaveAction.h"
+#include "LoadAction.h"
+#include <fstream>
 
 
 ApplicationManager::ApplicationManager()
@@ -38,7 +41,136 @@ void ApplicationManager::AddComponent(Component* pComp)
 	CompList[CompCount++] = pComp;		
 }
 
+///////////////////////////////////////// Neblo  ///////////////////////////////////////////////////////
 
+void ApplicationManager::Save(ofstream& file)
+{
+	// Count components (not connections)
+	int gateCount = 0;
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i])
+			gateCount++;
+	}
+
+	// Write count
+	file << gateCount << endl;
+
+	// Save all components
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i])
+		{
+			CompList[i]->Save(file);
+		}
+	}
+
+	// Write connections header
+	file << "Connections" << endl;
+
+	// Write end marker
+	file << "-1" << endl;
+}
+
+void ApplicationManager::Load(ifstream& file)
+{
+	// Clear everything
+	ClearAllComponents();
+	Component::ResetIDCounter();
+
+	// Read count
+	int compCount;
+	file >> compCount;
+
+	// Load each component
+	for (int i = 0; i < compCount; i++)
+	{
+		string type;
+		file >> type;
+
+		Component* pComp = nullptr;
+		GraphicsInfo gfx;
+
+		if (type == "AND2")
+		{
+			pComp = new AND2(gfx, AND2_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "OR2")
+		{
+			pComp = new OR2(gfx, OR2_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "NOT")
+		{
+			pComp = new NOT(gfx, NOT2_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "XOR2")
+		{
+			pComp = new XOR2(gfx, XOR2_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "NAND2")
+		{
+			pComp = new NAND2(gfx, NAND2_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "NOR2")
+		{
+			pComp = new NOR2(gfx, NOR2_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "NOR3")
+		{
+			pComp = new NOR3(gfx, NOR3_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "XNOR2")
+		{
+			pComp = new XNOR2(gfx, XNOR2_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "BUFF")
+		{
+			pComp = new BUFF(gfx, BUFF_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "AND3")
+		{
+			pComp = new AND3(gfx, AND3_FANOUT);
+			pComp->Load(file);
+		}
+		else if (type == "XOR3")
+		{
+			pComp = new XOR3(gfx, XOR3_FANOUT);
+			pComp->Load(file);
+		}
+
+		if (pComp)
+			AddComponent(pComp);
+	}
+
+	// Skip connections for now (you can add later)
+	string line;
+	while (getline(file, line))
+	{
+		if (line == "-1")
+			break;
+	}
+}
+
+Component* ApplicationManager::GetComponentByID(int id)
+{
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i] && CompList[i]->GetID() == id)
+			return CompList[i];
+	}
+	return nullptr;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 int ApplicationManager::GetCompCount()
 {

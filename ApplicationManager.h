@@ -6,6 +6,7 @@
 #include "GUI\Input.h"
 #include "Actions\Action.h"
 #include "Components\Component.h"
+#include <fstream>
 
 //Main class that manages everything in the application.
 class ApplicationManager
@@ -70,7 +71,13 @@ public:
 	void AddComponent(Component* pComp);
 	void SetClipboard(Component* pComp);
 	Component* GetClipboard();
+   //////////////////////////////////////////  Neblo  /////////////////////////////////////////////////////
 
+	void Save(ofstream& file);
+	void Load(ifstream& file);
+	Component* GetComponentByID(int id);
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
