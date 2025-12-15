@@ -1,24 +1,33 @@
-//#pragma once
-//#ifndef _ADD_CONNECTION_H
-//#define _ADD_CONNECTION_H
-//
-//#include "Actions/Action.h"
-//
-//
-//class AddConnection : public Action
-//{
-//private:
-//    int x1, y1;
-//    int x2, y2; 
-//
-//public:
-//    AddConnection(ApplicationManager* pApp);
-//    virtual ~AddConnection(void);
-//    virtual void ReadActionParameters();
-//    virtual void Execute();
-//    virtual void Undo();
-//    virtual void Redo();
-//};
-//
-//#endif
-//
+#pragma once
+#include "Actions/Action.h"
+#include "Components/Connection.h"
+
+class AddConnection :
+	public Action
+{
+private:
+	Component* SrcCmpt;
+	Component* DstCmpt;
+	OutputPin* SrcPin;	     //The Source pin of this connection (an output pin of certain Component)
+	InputPin* DstPin;	     //The Destination pin of this connection (an input pin of certain Component)
+	int		PinNumber;		//The Input pin to which this connection is linked
+	Component* SrcCmpnt;	//Connection source component
+	Component* DstCmpnt;	//Connection Destination component
+	// Center points of the source and destination pins
+	int sCx, sCy, dCx, dCy;
+public:
+	AddConnection(ApplicationManager* pApp);
+	virtual ~AddConnection(void);
+
+	virtual void ReadActionParameters();
+
+	//Execute action (code depends on action type)
+	virtual void Execute();
+
+	//To undo this action (code depends on action type)
+	virtual void Undo();
+
+	//To redo this action (code depends on action type)
+	virtual void Redo();
+};
+

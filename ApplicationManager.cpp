@@ -37,6 +37,13 @@ void ApplicationManager::AddComponent(Component* pComp)
 {
 	CompList[CompCount++] = pComp;		
 }
+
+
+
+int ApplicationManager::GetCompCount()
+{
+	return CompCount;
+}
 ////////////////////////////////////////////////////////////////////
 
 ActionType ApplicationManager::GetUserAction()
@@ -190,3 +197,15 @@ ApplicationManager::~ApplicationManager()
 	delete InputInterface;
 	
 }
+
+
+//////////////////////////////////////////////////////////////////////// Ahmed's additions ////////////////////////////////////////////////
+Component* ApplicationManager::GetClickedComponent(int x, int y)
+{
+	for (int i = 0; i < CompCount; i++) {
+		if (CompList[i]->Inside(x, y))
+			return CompList[i];
+	}
+	return NULL;
+}
+//////////////////////////////////////////////////////////////////////// Ahmed's additions ////////////////////////////////////////////////

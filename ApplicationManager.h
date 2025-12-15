@@ -32,6 +32,36 @@ public:
 	
 	void UpdateInterface();	//Redraws all the drawing window
 	Component* GetComponentAt(int x, int y);
+
+
+	//////////////////////////////////////////////// Ahmed's additions ////////////////////////////////////////////////
+	int GetCompCount();
+	Component* GetClickedComponent(int x, int y); //returns selected component
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//////////////////////////////////////////////// Ahmed's additions ////////////////////////////////////////////////
+
 	//Gets a pointer to Input / Output Object
 	Output* GetOutput();
 	Input* GetInput();
@@ -40,6 +70,10 @@ public:
 	void AddComponent(Component* pComp);
 	void SetClipboard(Component* pComp);
 	Component* GetClipboard();
+
+
+
+
 
 	//destructor
 	~ApplicationManager();

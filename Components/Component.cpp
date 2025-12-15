@@ -26,3 +26,10 @@ void Component::UpdatePinsPosition()
    
 }
 
+int Component::GetPinNumber()
+{
+    // Default implementation for base class, can be overridden by derived classes.
+    // If not applicable, return -1 or 0 as a safe default.
+    return -1;
+}
+

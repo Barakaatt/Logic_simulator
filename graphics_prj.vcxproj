@@ -131,7 +131,7 @@
     <ClCompile Include="Actions\AddANDgate2.cpp" />
     <ClCompile Include="AddANDgate3.cpp" />
     <ClCompile Include="AddBUFF.cpp" />
-    <ClCompile Include="Addconnections.cpp" />
+    <ClCompile Include="AddConnections.cpp" />
     <ClCompile Include="AddLable.cpp" />
     <ClCompile Include="AddLED.cpp" />
     <ClCompile Include="AddNANDgate2.cpp" />
@@ -213,7 +213,7 @@
     <ClInclude Include="Actions\AddANDgate2.h" />
     <ClInclude Include="AddANDgate3.h" />
     <ClInclude Include="AddBUFF.h" />
-    <ClInclude Include="Addconnections.h" />
+    <ClInclude Include="AddConnections.h" />
     <ClInclude Include="AddLable.h" />
     <ClInclude Include="AddLED.h" />
     <ClInclude Include="AddNANDgate2.h" />

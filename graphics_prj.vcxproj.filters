@@ -176,9 +176,6 @@
     <ClCompile Include="AddNORgate3.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="Addconnections.cpp">
-      <Filter>Actions</Filter>
-    </ClCompile>
     <ClCompile Include="ExitAction.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
@@ -235,6 +232,9 @@
     </ClCompile>
     <ClCompile Include="OR2.cpp">
       <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="AddConnections.cpp">
+      <Filter>Actions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -374,9 +374,6 @@
     <ClInclude Include="AddNORgate3.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="Addconnections.h">
-      <Filter>Actions</Filter>
-    </ClInclude>
     <ClInclude Include="ExitAction.h">
       <Filter>Actions</Filter>
     </ClInclude>
@@ -433,6 +430,9 @@
     </ClInclude>
     <ClInclude Include="OR2.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="AddConnections.h">
+      <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

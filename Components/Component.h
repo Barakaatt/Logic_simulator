@@ -3,6 +3,7 @@
 
 #include "..\Defs.h"
 #include "..\GUI\Output.h"
+#include "Pin.h"
 
 //Base class for classes Gate, Switch, and LED.
 class Component
@@ -25,6 +26,15 @@ public:
 	{
 		m_Selected = s;
 	}
+	/////////////////////////////////////////////////////// Ahmed's additions /////////////////////////////////////////
+	virtual bool Inside(int x, int y);
+	virtual OutputPin* GetOutputPin();
+	virtual int GetPinNumber();
+	virtual GraphicsInfo getcorners();
+	virtual InputPin* GetInputPins(int index);
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 	bool isselected() const
 	{
 		return m_Selected;

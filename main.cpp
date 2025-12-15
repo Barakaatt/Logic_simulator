@@ -25,6 +25,9 @@ int main()
 	
 
 	}while(ActType != EXIT);
+
+	cout << "Program exiting normally\n";
+
 		
 	return 0;
 }
