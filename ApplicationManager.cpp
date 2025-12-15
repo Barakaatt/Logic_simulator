@@ -21,6 +21,9 @@
 #include "select.h"
 #include "SaveAction.h"
 #include "LoadAction.h"
+#include "components/Connection.h"
+#include "components/Gate.h"
+#include "Delete.h"
 #include <fstream>
 
 
@@ -245,11 +248,13 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new Paste(this);
 			break;
 		case EDIT_Label:
-
-				pAct = new EditLabel(this);
-				break;
+			pAct = new EditLabel(this);
+			break;
 		case SELECT:
 			pAct = new Select(this);
+			break;
+		case DEL:
+			pAct = new Delete(this);
 			break;
 
 	}
@@ -341,3 +346,93 @@ Component* ApplicationManager::GetClickedComponent(int x, int y)
 	return NULL;
 }
 //////////////////////////////////////////////////////////////////////// Ahmed's additions ////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////// Tamim's additions ////////////////////////////////////////////////
+void ApplicationManager::DeleteSelectedComponents()
+{
+	for (int i = CompCount - 1; i >= 0; i--)
+	{
+		if (CompList[i]->isselected())
+		{
+			DeleteComponent(i);
+		}
+	}
+	// Update the screen immediately after deletion
+	if (OutputInterface)
+		OutputInterface->ClearDrawingArea();
+}
+
+void ApplicationManager::DeleteComponent(int index)
+{
+	if (index < 0 || index >= CompCount) return;
+
+	Component* pComp = CompList[index];
+
+	
+	Connection* pConn = dynamic_cast<Connection*>(pComp);
+	if (pConn)
+	{
+		OutputPin* pSrcPin = pConn->getSourcePin();
+		if (pSrcPin)
+		{
+			pSrcPin->RemoveConnection(pConn);
+		}
+	}
+
+
+	Gate* pGate = dynamic_cast<Gate*>(pComp);
+	if (pGate)
+	{
+		
+		int numInputs = pGate->GetNoOfInputs(); 
+		for (int k = 0; k < numInputs; k++)
+		{
+			InputPin* pInPin = pGate->GetInputPin(k);
+
+			
+			for (int j = CompCount - 1; j >= 0; j--)
+			{
+				Connection* pTargetConn = dynamic_cast<Connection*>(CompList[j]);
+				if (pTargetConn && pTargetConn->getDestPin() == pInPin)
+				{
+					DeleteComponent(j);
+				}
+			}
+		}
+
+		
+		OutputPin* pOutPin = pGate->GetOutputPin();
+		
+		for (int j = CompCount - 1; j >= 0; j--)
+		{
+			Connection* pTargetConn = dynamic_cast<Connection*>(CompList[j]);
+			if (pTargetConn && pTargetConn->getSourcePin() == pOutPin)
+			{
+				DeleteComponent(j); 
+			}
+		}
+	}
+
+	// --- Actual Deletion from List ---
+	delete CompList[index];
+	CompList[index] = NULL;
+
+	// Shift the remaining components to fill the gap
+	for (int i = index; i < CompCount - 1; i++)
+	{
+		CompList[i] = CompList[i + 1];
+	}
+	CompList[CompCount - 1] = NULL;
+	CompCount--;
+
+	if (pConn)
+	{
+		OutputPin* pSrcPin = pConn->getSourcePin();
+		if (pSrcPin) pSrcPin->RemoveConnection(pConn);
+
+		//Resets to low
+		InputPin* pDstPin = pConn->getDestPin();
+		if (pDstPin) pDstPin->setStatus(LOW);
+	}
+}
+//////////////////////////////////////////////////////////////////////// Tamim's additions ////////////////////////////////////////////////

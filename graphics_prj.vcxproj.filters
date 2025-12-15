@@ -242,6 +242,9 @@
     <ClCompile Include="LoadAction.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="Delete.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defs.H" />
@@ -444,6 +447,9 @@
       <Filter>Actions</Filter>
     </ClInclude>
     <ClInclude Include="LoadAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Delete.h">
       <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>

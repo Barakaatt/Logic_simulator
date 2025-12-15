@@ -21,7 +21,9 @@ protected:
 	int m_Inputs;		//No. of input pins of that Gate.
 public:
 	Gate(int r_Inputs, int r_FanOut);
-	
+	OutputPin* GetOutputPin();
+	InputPin* GetInputPin(int index);
+	int GetNoOfInputs() const { return m_Inputs; }
 
 };
 

@@ -20,3 +20,21 @@ bool OutputPin::ConnectTo(Connection *r_Conn)
 	
 	return false;	//can't connect to any more connections
 }
+
+void OutputPin::RemoveConnection(Connection* pConn)
+{
+	for (int i = 0; i < m_Conn; ++i)
+	{
+		if (m_Connections[i] == pConn)
+		{
+			// Remove this connection by shifting the array
+			for (int j = i; j < m_Conn - 1; ++j)
+			{
+				m_Connections[j] = m_Connections[j + 1];
+			}
+			m_Connections[m_Conn - 1] = NULL; // Clear the last one
+			m_Conn--; // Decrease count
+			return;
+		}
+	}
+}

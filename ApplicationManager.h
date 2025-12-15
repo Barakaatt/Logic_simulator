@@ -20,6 +20,7 @@ private:
 	Component* Clipboard;
 	Output* OutputInterface; //pointer to the Output Clase Interface
 	Input* InputInterface; //pointer to the Input Clase Interface
+	void DeleteComponent(int index); //deletes component at index
 	
 public:	
 	ApplicationManager(); //constructor
@@ -30,6 +31,9 @@ public:
 	//Creates an action and executes it
 	void ExecuteAction(ActionType);
 	void Exit();
+
+	//Delete Component
+	void DeleteSelectedComponents();
 	
 	void UpdateInterface();	//Redraws all the drawing window
 	Component* GetComponentAt(int x, int y);
