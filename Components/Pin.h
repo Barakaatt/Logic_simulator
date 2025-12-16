@@ -10,6 +10,15 @@ protected:
 public:
 	Pin();
 	void setStatus(STATUS r_Status);
+
+
+
+	void setConnected(bool c);//Barakat
+	bool getConnected(); //Barakat
+
+
+
+
 	STATUS getStatus();
 };
 

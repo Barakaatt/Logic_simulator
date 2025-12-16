@@ -3,6 +3,8 @@
 Component::Component(const GraphicsInfo &r_GfxInfo)
 {
 	m_GfxInfo = r_GfxInfo;	
+    m_Label = "DefaultLabel";
+    m_ID = 0;
 }
 
 Component::Component()
