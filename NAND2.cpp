@@ -66,8 +66,8 @@ bool NAND2::IsInside(int x, int y) const
 		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
 
 }
-/*-void NAND2::Reset()
+void NAND2::Reset()
 {
 	// Reset the output pin to LOW
 	m_OutputPin.setStatus(LOW);
-}*/
+}

@@ -56,17 +56,17 @@ string NOR2::GetType() const
 {
 	return "NOR2";
 }
-/*bool NOR2::IsInside(int x, int y) const
+bool NOR2::IsInside(int x, int y) const
 {
 	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
 			y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
-}*/
-/*void NOR2::Reset()
+}
+void NOR2::Reset()
 {
 	m_OutputPin.setStatus(LOW);
 	for (int i = 0; i < m_Inputs; ++i)
 	{
 		m_InputPins[i].setStatus(LOW);
 	}
-}*/
+}
 

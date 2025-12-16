@@ -4,21 +4,21 @@ Connection::Connection(const GraphicsInfo& r_GfxInfo, OutputPin* pSrcPin, InputP
 	:Component(r_GfxInfo)
 	
 {
-	//SrcPin = pSrcPin;
-	//DstPin = pDstPin;
+	SrcPin = pSrcPin;
+	DstPin = pDstPin;
 	SrcCmpnt = pS;
 	DstCmpnt = pD;
 	PinNumber = Pin;
 }
 Connection::Connection(Component* pS, Component* pD, int Pin)
 {
-	//SrcPin = NULL;
+	SrcPin = NULL;
 	DstPin = NULL;
 	SrcCmpnt = pS;
 	DstCmpnt = pD;
 	PinNumber = Pin;
 }
-/*void Connection::setSourcePin(OutputPin* pSrcPin)
+void Connection::setSourcePin(OutputPin *pSrcPin)
 {	SrcPin = pSrcPin;	}
 
 OutputPin* Connection::getSourcePin()
@@ -30,7 +30,7 @@ void Connection::setDestPin(InputPin *pDstPin)
 
 InputPin* Connection::getDestPin()
 {	return DstPin;	}
-*/
+
 
 int Connection::GetNumOfInputs() {
 	return 0; //check this
@@ -40,7 +40,7 @@ void Connection::DrawFrame(Output* pOut)
 }
 
 
-/*void Connection::Operate()
+void Connection::Operate()
 {
 	//Status of connection destination pin = status of connection source pin
 	DstPin->setStatus((STATUS)SrcPin->getStatus());
@@ -71,7 +71,7 @@ int Connection::GetInputPinStatus(int n)	//returns status of Inputpin # n if SWI
 void Connection::setInputPinStatus(int n, STATUS s)
 {
 	SrcPin->setStatus(s);
-}*/
+}
 
 Component* Connection::Clone() const
 {
@@ -85,7 +85,7 @@ string Connection::GetType() const
 }
 
 
-/*bool Connection::CanConnect()
+bool Connection::CanConnect()
 {
 	if (SrcPin && DstPin) {
 		if (DstPin->getConnected() == false) {
@@ -96,4 +96,4 @@ string Connection::GetType() const
 		}
 	}
 	return false;
-}*/
+}

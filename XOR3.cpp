@@ -68,7 +68,7 @@ bool XOR3::IsInside(int x, int y) const
 		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
 	
 }
-/*void XOR3::Reset()
+void XOR3::Reset()
 {
 	// Reset all input pins to LOW
 	for (int i = 0; i < 3; ++i)
@@ -76,4 +76,4 @@ bool XOR3::IsInside(int x, int y) const
 		m_InputPins[i].setStatus(LOW);
 	}
 	m_OutputPin.setStatus(LOW);
-}*/
+}

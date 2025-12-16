@@ -60,13 +60,13 @@ void ApplicationManager::Save(ofstream& file)
 	file << gateCount << endl;
 
 	// Save all components
-	/*for (int i = 0; i < CompCount; i++)
+	for (int i = 0; i < CompCount; i++)
 	{
 		if (CompList[i])
 		{
 			CompList[i]->Save(file);
 		}
-	}*/
+	}
 
 	// Write connections header
 	file << "Connections" << endl;
@@ -75,7 +75,7 @@ void ApplicationManager::Save(ofstream& file)
 	file << "-1" << endl;
 }
 
-/*void ApplicationManager::Load(ifstream& file)
+void ApplicationManager::Load(ifstream& file)
 {
 	// Clear everything
 	ClearAllComponents();
@@ -171,7 +171,7 @@ Component* ApplicationManager::GetComponentByID(int id)
 			return CompList[i];
 	}
 	return nullptr;
-}*/
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -256,9 +256,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case DEL:
 			pAct = new Delete(this);
 			break;
-		/*case Simulate:
+		case Simulate:
 			pAct = new Simulate(this);
-			break;*/
+			break;
 	}
 	if(pAct)
 	{
@@ -438,7 +438,7 @@ void ApplicationManager::DeleteComponent(int index)
 	}
 }
 //////////////////////////////////////////////////////////////////////// Tamim's additions ////////////////////////////////////////////////
-/*void ApplicationManager::Simulate()
+void ApplicationManager::Simulate()
 {
 	// 1) Reset outputs
 	for (int i = 0; i < CompCount; i++)
@@ -453,4 +453,4 @@ void ApplicationManager::DeleteComponent(int index)
 	}
 
 	UpdateInterface();  
-}*/
+}

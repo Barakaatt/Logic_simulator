@@ -65,12 +65,12 @@ void AddConnection::Execute()
 	GInfo.x2 = dCx;
 	GInfo.y2 = dCy;
 
-	/*Connection* pA = new Connection(GInfo, SrcPin, DstPin, SrcCmpnt, DstCmpnt, PinNumber);
+	Connection* pA = new Connection(GInfo, SrcPin, DstPin, SrcCmpnt, DstCmpnt, PinNumber);
 	if (pA->CanConnect())
 		pManager->AddComponent(pA);
 	else
 	{
 		delete pA;
 		pOut->PrintMsg("Couldn't Connect these two components");
-	}*/
+	}
 }
