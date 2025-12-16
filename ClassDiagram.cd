@@ -67,7 +67,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AQAAIAIAAIQIQAQEgAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AQAAqIIAAYQIQBQEgAAAAAAAkQAQAAAAIEAAABQAAAA=</HashCode>
       <FileName>ApplicationManager.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -81,14 +81,14 @@
   <Class Name="AND2" Collapsed="true">
     <Position X="4.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ADAAAAAAAAAAAgAAAAAAAAAAAAAACAAAAQAAgAAAAAA=</HashCode>
+      <HashCode>ADAAAAAAAAAAAgAAAAAAAEAAAAAACAEAAQAAgAAAABA=</HashCode>
       <FileName>Components\AND2.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Component" Collapsed="true">
     <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAgAAAAAAAAAgAgAAAAAAAAAAAACAAAAQBAgAAAAAA=</HashCode>
+      <HashCode>ABAgBAAQAAgEBoAgKAAAAEAQAAABCAEAAZBFgAAABBA=</HashCode>
       <FileName>Components\Component.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -99,20 +99,12 @@
         <Position X="-0.588" Y="0.435" />
       </InheritanceModifierLabel>
     </InheritanceLine>
-    <AssociationLine Name="DstPin" Type="InputPin" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="2.5" Y="2.125" />
-        <Point X="1.938" Y="2.125" />
-        <Point X="1.938" Y="1.441" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>ABAAAAAQAAAAAgEAAIAAEAAAAAABCAAAAQAAiAAQAAA=</HashCode>
+      <HashCode>ABAAAAAQAAgAAgEAAoIAEAACAAABCAEgAQAAiAAQABg=</HashCode>
       <FileName>Components\Connection.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="SrcPin" />
-      <Field Name="DstPin" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Gate" Collapsed="true">
@@ -139,7 +131,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAIAAAAAAAAAAAAgAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAADAAAAAAAAIAAIAAAAAAAAAkAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Components\Gate.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -169,14 +161,14 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAABAAIAAAAAAAAAAAAAAAACAAAAEAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAABAAIAAAAAAAAAAAAAAAACAAAAEAAAAABAABAAA=</HashCode>
       <FileName>Components\OutputPin.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pin" Collapsed="true">
     <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAACAAAAAAAABEAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAgQAAAAAAAACAAAAAAAABEAAQAAAAAAAAAA=</HashCode>
       <FileName>Components\Pin.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -207,7 +199,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAADAAAUAAAAAAAAYAEAAAAAAAAQUAAAEIAAAgBA=</HashCode>
+      <HashCode>AAAgABDAIQUAAAAKAAQYAMAAAAAAAAQUAASEIAAAwBI=</HashCode>
       <FileName>GUI\Output.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

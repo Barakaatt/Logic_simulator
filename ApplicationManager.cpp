@@ -217,12 +217,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case ADD_Buff:
 			pAct = new AddBUFF(this);
 			break;
-		//case ADD_Switch:
-		//	pAct = new AddSwitch(this);
-		//	break;
-		//case ADD_LED:
-		//	pAct = new AddLED(this);
-		//	break;
+		case ADD_Switch:
+			pAct = new AddSwitch(this);
+			break;
+		case ADD_LED:
+			pAct = new AddLED(this);
+			break;
 		case ADD_AND_GATE_3:
 			pAct = new AddANDgate3(this);
 			break;
