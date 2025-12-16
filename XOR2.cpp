@@ -65,8 +65,8 @@ bool XOR2::IsInside(int x, int y) const
 		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
 	
 }
-void XOR2::Reset()
+/*void XOR2::Reset()
 {
 	// Reset the output pin status to LOW
 	m_OutputPin.setStatus(LOW);
-}
+}*/

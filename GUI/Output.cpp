@@ -150,9 +150,9 @@ void Output::CreateDesignToolBar() const
 	for (int i = 0; i < 10; i++)
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
-
+	// Draw component items under the toolbar
 	for (int i = 10; i < ITM_DSN_CNT; i++)
-		pWind->DrawImage(MenuItemImages[i], i * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolBarHeight);
+		pWind->DrawImage(MenuItemImages[i], (i - 10) * UI.ToolItemWidth, UI.ToolBarHeight + 3, UI.ToolItemWidth, UI.GateBarHeight);
 
 
 	//Draw a line under the toolbar

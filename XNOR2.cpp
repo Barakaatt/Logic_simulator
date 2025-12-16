@@ -66,11 +66,11 @@ bool XNOR2::IsInside(int x, int y) const
 		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
 	
 }
-void NOR2::Reset()
+/*void NOR2::Reset()
 {
 	m_OutputPin.setStatus(LOW);
 	for (int i = 0; i < m_Inputs; ++i)
 	{
 		m_InputPins[i].setStatus(LOW);
 	}
-}
+}*/

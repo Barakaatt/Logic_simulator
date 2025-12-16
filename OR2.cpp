@@ -67,8 +67,8 @@ bool OR2::IsInside(int x, int y) const
 
 	
 }
-void OR2::Reset()
+/*void OR2::Reset()
 {
 	// Reset the output pin status to LOW
 	m_OutputPin.setStatus(LOW);
-}
+}*/

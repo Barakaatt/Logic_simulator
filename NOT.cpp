@@ -62,8 +62,8 @@ bool NOT::IsInside(int x, int y) const
 		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
 	
 }
-void NOT::Reset()
+/*void NOT::Reset()
 {
 	// Reset the output pin to LOW
 	m_OutputPin.setStatus(LOW);
-}
+}*/

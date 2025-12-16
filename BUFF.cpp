@@ -61,7 +61,7 @@ bool BUFF::IsInside(int x, int y) const
 	int bottom = m_GfxInfo.y2;
 	return (x >= left && x <= right && y >= top && y <= bottom);
 }
-void BUFF::Reset()
+/*void BUFF::Reset()
 {
 	// Reset the output pin to LOW
 	m_OutputPin.setStatus(LOW);
@@ -70,4 +70,4 @@ void BUFF::Reset()
 	{
 		m_InputPins[i].setStatus(LOW);
 	}
-}
+}*/
