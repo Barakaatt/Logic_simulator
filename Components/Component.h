@@ -16,6 +16,10 @@ private:
 protected:
 	GraphicsInfo m_GfxInfo;	//The parameters required to draw a component
 	bool m_Selected; //whether the component is selected or not
+
+	int m_ID;
+
+
 public:
 	Component(const GraphicsInfo &r_GfxInfo);
 	virtual void Operate() = 0;	//Calculates the output according to the inputs
@@ -35,6 +39,7 @@ public:
 	virtual int GetPinNumber();
 	virtual GraphicsInfo getcorners();
 	virtual InputPin* GetInputPins(int index);
+
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

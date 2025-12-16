@@ -146,7 +146,12 @@ void Output::CreateDesignToolBar() const
 	//TODO: Prepare image for each menu item and add it to the list
 
 	//Draw menu item one image at a time
-	for (int i = 0; i < ITM_DSN_CNT; i++)
+
+	for (int i = 0; i < 10; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+
+	for (int i = 10; i < ITM_DSN_CNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolBarHeight);
 
 
