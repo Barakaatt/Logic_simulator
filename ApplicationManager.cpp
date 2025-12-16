@@ -256,7 +256,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case DEL:
 			pAct = new Delete(this);
 			break;
-
+		case Simulate:
+			pAct = new Simulate(this);
+			break;
 	}
 	if(pAct)
 	{
@@ -436,3 +438,19 @@ void ApplicationManager::DeleteComponent(int index)
 	}
 }
 //////////////////////////////////////////////////////////////////////// Tamim's additions ////////////////////////////////////////////////
+void ApplicationManager::Simulate()
+{
+	// 1) Reset outputs
+	for (int i = 0; i < CompCount; i++)
+	{
+		CompList[i]->Reset();
+	}
+
+	// 2) Operate all components
+	for (int i = 0; i < CompCount; i++)
+	{
+		CompList[i]->Operate();
+	}
+
+	UpdateInterface();  
+}

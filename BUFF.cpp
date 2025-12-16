@@ -53,3 +53,21 @@ string BUFF::GetType() const
 {
 	return "BUFF";
 }
+bool BUFF::IsInside(int x, int y) const
+{
+	int left = m_GfxInfo.x1;
+	int right = m_GfxInfo.x2;
+	int top = m_GfxInfo.y1;
+	int bottom = m_GfxInfo.y2;
+	return (x >= left && x <= right && y >= top && y <= bottom);
+}
+void BUFF::Reset()
+{
+	// Reset the output pin to LOW
+	m_OutputPin.setStatus(LOW);
+	// Reset all input pins to LOW
+	for (int i = 0; i < 1; ++i) // BUFF has only 1 input pin
+	{
+		m_InputPins[i].setStatus(LOW);
+	}
+}

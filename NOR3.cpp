@@ -61,3 +61,18 @@ string NOR3::GetType() const
 {
 	return "NOR3";
 }
+bool NOR3::IsInside(int x, int y) const
+{
+	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
+		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
+}
+void NOR3::Reset()
+{
+	// Reset all input pins to LOW
+	for (int i = 0; i < 3; ++i)
+	{
+		m_InputPins[i].setStatus(LOW);
+	}
+	// Reset output pin to LOW
+	m_OutputPin.setStatus(LOW);
+}

@@ -42,6 +42,7 @@ public:
 	//////////////////////////////////////////////// Ahmed's additions ////////////////////////////////////////////////
 	int GetCompCount();
 	Component* GetClickedComponent(int x, int y); //returns selected component
+	void simulate (); //simulates the circuit);
 
 
 

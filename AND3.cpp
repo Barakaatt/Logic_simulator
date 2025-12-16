@@ -11,9 +11,14 @@ AND3::AND3(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 
 void AND3::Operate()
 {
-	//caclulate the output status as the ANDing of the two input pins
+	//caclulate the output status as the ANDing of the three input pins
+	if (m_InputPins[0].getStatus() == HIGH && m_InputPins[1].getStatus() == HIGH && m_InputPins[2].getStatus() == HIGH)
+		m_OutputPin.setStatus(HIGH);
+	else
+		m_OutputPin.setStatus(LOW);
+	
 
-	//Add you code here
+
 }
 
 
@@ -57,4 +62,14 @@ bool AND3::IsInside(int x, int y) const
 {
 	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
 		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
+}
+void AND3::Reset()
+{
+	// Reset all input pins to LOW
+	for (int i = 0; i < 3; ++i)
+	{
+		m_InputPins[i].setStatus(LOW);
+	}
+	// Reset output pin to LOW
+	m_OutputPin.setStatus(LOW);
 }

@@ -11,9 +11,14 @@ XOR2::XOR2(const GraphicsInfo& r_GfxInfo, int r_FanOut) :Gate(2, r_FanOut)
 
 void XOR2::Operate()
 {
-	//caclulate the output status as the ANDing of the two input pins
-
-	//Add you code here
+	// Calculate the output status as the XOR of the two input pins
+	STATUS in1 = m_InputPins[0].getStatus();
+	STATUS in2 = m_InputPins[1].getStatus();
+	// XOR: output is HIGH if inputs are different, LOW if they are the same
+	if (in1 != in2)
+		m_OutputPin.setStatus(HIGH);
+	else
+		m_OutputPin.setStatus(LOW);
 }
 
 
@@ -59,4 +64,9 @@ bool XOR2::IsInside(int x, int y) const
 	return (x >= m_GfxInfo.x1 && x <= m_GfxInfo.x2 &&
 		y >= m_GfxInfo.y1 && y <= m_GfxInfo.y2);
 	
+}
+void XOR2::Reset()
+{
+	// Reset the output pin status to LOW
+	m_OutputPin.setStatus(LOW);
 }
