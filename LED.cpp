@@ -18,7 +18,7 @@ void LED::Draw(Output* pOut)
 {
 	// If the input pin is HIGH, the LED is ON
 	bool isON = (GetInputPinStatus(0) == HIGH);
-	pOut->DrawLED(m_GfxInfo, isON, Selected);
+	pOut->DrawLED(m_GfxInfo, isON, isselected);
 }
 
 int LED::GetOutPinStatus()

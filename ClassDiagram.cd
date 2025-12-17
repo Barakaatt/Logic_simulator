@@ -9,9 +9,9 @@
   <Comment CommentText="- The name on each association arrow is a pointer member&#xD;&#xA;- Closed arrow: inheritance&#xD;&#xA;- Single, double arrow: association/aggregation">
     <Position X="8.917" Y="2.469" Height="0.883" Width="3.025" />
   </Comment>
-  <Class Name="Action" Collapsed="true">
+  <Class Name="Action">
     <Position X="6.75" Y="2.25" Width="1.5" />
-    <AssociationLine Name="pManager" Type="ApplicationManager" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="pManager" Type="ApplicationManager" ManuallyRouted="true">
       <Path>
         <Point X="6.875" Y="2.25" />
         <Point X="6.875" Y="1.25" />
@@ -29,7 +29,7 @@
       <Field Name="pManager" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="AddANDgate2" Collapsed="true">
+  <Class Name="AddANDgate2">
     <Position X="6.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AECIAAAAAAAARAQAAAAAAAQBAwAAAACAAQAAAAAAAAA=</HashCode>
@@ -109,7 +109,7 @@
   </Class>
   <Class Name="Gate" Collapsed="true">
     <Position X="4.75" Y="2" Width="1.5" />
-    <AssociationLine Name="m_InputPins" Type="InputPin" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="m_InputPins" Type="InputPin" ManuallyRouted="true">
       <Path>
         <Point X="4.938" Y="2" />
         <Point X="4.938" Y="1.824" />
@@ -120,7 +120,7 @@
         <Point X="2.25" Y="1.408" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="m_OutputPin" Type="OutputPin" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="m_OutputPin" Type="OutputPin" ManuallyRouted="true">
       <Path>
         <Point X="4.75" Y="2.312" />
         <Point X="4.375" Y="2.312" />

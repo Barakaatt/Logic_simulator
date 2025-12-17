@@ -18,7 +18,7 @@ void SWITCH::Draw(Output* pOut)
 {
 	// Draw the switch based on its current state (High = ON, Low = OFF)
 	bool isON = (m_OutputPin.getStatus() == HIGH);
-	pOut->DrawSwitch(m_GfxInfo, isON, isselected());
+	pOut->DrawSWITCH(m_GfxInfo, isON, isselected());
 }
 
 int SWITCH::GetOutPinStatus()
